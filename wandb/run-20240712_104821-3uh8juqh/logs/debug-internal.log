@@ -1,0 +1,90 @@
+2024-07-12 10:48:21,357 INFO    StreamThr :29728 [internal.py:wandb_internal():85] W&B internal server running at pid: 29728, started at: 2024-07-12 10:48:21.355757
+2024-07-12 10:48:21,358 DEBUG   HandlerThread:29728 [handler.py:handle_request():158] handle_request: status
+2024-07-12 10:48:21,358 INFO    WriterThread:29728 [datastore.py:open_for_write():87] open: D:\Works\SomeCodes\testing-wandb\wandb\run-20240712_104821-3uh8juqh\run-3uh8juqh.wandb
+2024-07-12 10:48:21,362 DEBUG   SenderThread:29728 [sender.py:send():379] send: header
+2024-07-12 10:48:21,362 DEBUG   SenderThread:29728 [sender.py:send():379] send: run
+2024-07-12 10:48:24,735 INFO    SenderThread:29728 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\connection.py", line 652, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\connection.py", line 805, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\util\ssl_.py", line 465, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\util\ssl_.py", line 509, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\connectionpool.py", line 490, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\wandb\sdk\internal\internal_api.py", line 345, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\wandb\sdk\lib\gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\requests\adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1006)')))
+2024-07-12 10:48:26,405 DEBUG   HandlerThread:29728 [handler.py:handle_request():158] handle_request: keepalive
+2024-07-12 10:48:27,424 DEBUG   HandlerThread:29728 [handler.py:handle_request():158] handle_request: shutdown
+2024-07-12 10:48:27,424 INFO    HandlerThread:29728 [handler.py:finish():882] shutting down handler
+2024-07-12 10:48:28,426 INFO    WriterThread:29728 [datastore.py:close():296] close: D:\Works\SomeCodes\testing-wandb\wandb\run-20240712_104821-3uh8juqh\run-3uh8juqh.wandb

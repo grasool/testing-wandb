@@ -1,0 +1,72 @@
+2024-07-08 12:26:51,719 INFO    StreamThr :25904 [internal.py:wandb_internal():85] W&B internal server running at pid: 25904, started at: 2024-07-08 12:26:51.717291
+2024-07-08 12:26:51,720 DEBUG   HandlerThread:25904 [handler.py:handle_request():158] handle_request: status
+2024-07-08 12:26:51,720 INFO    WriterThread:25904 [datastore.py:open_for_write():87] open: D:\Works\SomeCodes\testing-wandb\wandb\run-20240708_122651-ej5vytfg\run-ej5vytfg.wandb
+2024-07-08 12:26:51,724 DEBUG   SenderThread:25904 [sender.py:send():379] send: header
+2024-07-08 12:26:51,724 DEBUG   SenderThread:25904 [sender.py:send():379] send: run
+2024-07-08 12:26:56,774 DEBUG   HandlerThread:25904 [handler.py:handle_request():158] handle_request: keepalive
+2024-07-08 12:26:57,262 INFO    SenderThread:25904 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\connection.py", line 653, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\connection.py", line 806, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\util\ssl_.py", line 465, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\util\ssl_.py", line 509, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\wandb\sdk\internal\internal_api.py", line 345, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\wandb\sdk\lib\gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\4475358\.conda\envs\testing-123\lib\site-packages\requests\adapters.py", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+2024-07-08 12:27:01,818 DEBUG   HandlerThread:25904 [handler.py:handle_request():158] handle_request: keepalive
+2024-07-08 12:27:06,852 DEBUG   HandlerThread:25904 [handler.py:handle_request():158] handle_request: keepalive

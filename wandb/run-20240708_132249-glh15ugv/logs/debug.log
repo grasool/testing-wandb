@@ -1,0 +1,31 @@
+2024-07-08 13:22:49,505 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Current SDK version is 0.17.4
+2024-07-08 13:22:49,505 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Configure stats pid to 41840
+2024-07-08 13:22:49,505 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Loading settings from C:\Users\4475358\.config\wandb\settings
+2024-07-08 13:22:49,505 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Loading settings from D:\Works\SomeCodes\testing-wandb\wandb\settings
+2024-07-08 13:22:49,505 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-07-08 13:22:49,505 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'test-wandb.py', 'program_abspath': 'D:\\Works\\SomeCodes\\testing-wandb\\test-wandb.py', 'program': 'D:\\Works\\SomeCodes\\testing-wandb\\test-wandb.py'}
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_init.py:_log_setup():529] Logging user logs to D:\Works\SomeCodes\testing-wandb\wandb\run-20240708_132249-glh15ugv\logs\debug.log
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_init.py:_log_setup():530] Logging internal logs to D:\Works\SomeCodes\testing-wandb\wandb\run-20240708_132249-glh15ugv\logs\debug-internal.log
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_init.py:init():569] calling init triggers
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_init.py:init():576] wandb.init called with sweep_config: {}
+config: {}
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_init.py:init():619] starting backend
+2024-07-08 13:22:49,506 INFO    MainThread:41840 [wandb_init.py:init():623] setting up manager
+2024-07-08 13:22:49,507 INFO    MainThread:41840 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-07-08 13:22:49,510 INFO    MainThread:41840 [wandb_init.py:init():631] backend started and connected
+2024-07-08 13:22:49,511 INFO    MainThread:41840 [wandb_init.py:init():720] updated telemetry
+2024-07-08 13:22:49,513 INFO    MainThread:41840 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-07-08 13:24:20,109 ERROR   MainThread:41840 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-07-08 13:24:20,109 ERROR   MainThread:41840 [wandb_init.py:init():1191] error in wandb.init()
+Traceback (most recent call last):
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\wandb\sdk\wandb_init.py", line 1181, in init
+    return wi.init()
+           ^^^^^^^^^
+  File "C:\ProgramData\miniconda3\envs\wandbtestp11\Lib\site-packages\wandb\sdk\wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-07-08 13:24:21,735 WARNING MsgRouterThr:41840 [router.py:message_loop():77] message_loop has been closed

@@ -1,0 +1,5 @@
+2024-07-08 11:54:45,094 INFO    StreamThr :13272 [internal.py:wandb_internal():85] W&B internal server running at pid: 13272, started at: 2024-07-08 11:54:45.092792
+2024-07-08 11:54:45,095 DEBUG   HandlerThread:13272 [handler.py:handle_request():158] handle_request: status
+2024-07-08 11:54:45,098 INFO    WriterThread:13272 [datastore.py:open_for_write():87] open: D:\Works\SomeCodes\testing-wandb\wandb\run-20240708_115445-3zer36gz\run-3zer36gz.wandb
+2024-07-08 11:54:45,100 DEBUG   SenderThread:13272 [sender.py:send():379] send: header
+2024-07-08 11:54:45,101 DEBUG   SenderThread:13272 [sender.py:send():379] send: run

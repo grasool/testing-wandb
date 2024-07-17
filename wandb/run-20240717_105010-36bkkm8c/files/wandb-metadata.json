@@ -1,0 +1,47 @@
+{
+    "os": "Windows-10-10.0.19044-SP0",
+    "python": "3.11.9",
+    "heartbeatAt": "2024-07-17T14:50:12.376930",
+    "startedAt": "2024-07-17T14:50:10.012957",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "d:\\Works\\SomeCodes\\testing-wandb\\test-wandb.py",
+    "codePathLocal": "test-wandb.py",
+    "codePath": "test-wandb.py",
+    "host": "PD-505W7Y3",
+    "username": "4475358",
+    "executable": "C:\\ProgramData\\miniconda3\\envs\\wandbtestp11\\python.exe",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 2100.0,
+        "min": 0.0,
+        "max": 2100.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2100.0,
+            "min": 0.0,
+            "max": 2100.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 3726.0058555603027,
+            "used": 565.4868469238281
+        }
+    },
+    "gpu": "NVIDIA RTX A4500",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A4500",
+            "memory_total": 21464350720
+        }
+    ],
+    "memory": {
+        "total": 127.69602584838867
+    }
+}
