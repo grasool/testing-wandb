@@ -1,0 +1,5 @@
+[default]
+entity = rasool
+project = test_project
+base_url = https://api.wandb.ai
+
